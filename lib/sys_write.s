@@ -3,7 +3,7 @@ newline: .ascii "\n"
 spacechar: .ascii " "
 .macro write fd, str, len
     movq \fd, %rdi
-    movq \str, %rsi
+    leaq \str, %rsi
     movq \len, %rdx
     movq $1, %rax
     syscall
