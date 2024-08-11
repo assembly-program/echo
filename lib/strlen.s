@@ -7,8 +7,9 @@ len:
     pushq %rbp
     movq %rsp, %rbp
 
-    pushq %r8
-    movq $0, %r8
+    pushq %rsi
+    pushq %rcx
+    movq $0, %rcx
 
 sectionL0:
     movq %rdi, %rsi
@@ -16,11 +17,12 @@ sectionL0:
     lodsb
     cmpb $0, %al
     je .LLL
-    incq %r8
+    incq %rcx
     jmp .LPL0
 
-.LLL:
-    movq %r8, %rax
-    popq %r8
+.LLL0:
+    movq %rcx, %rax
+    popq %rcx
+    popq %rsi
     leave
     ret
