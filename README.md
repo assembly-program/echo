@@ -1,5 +1,5 @@
 # echo
-assembly program similar to the Unix/Linux command line program echo
+an assembly program similar to the Unix/Linux command line program echo
 
 # Build & run 
 - the make file uses the ``as`` and ``ld`` commands to build the program
